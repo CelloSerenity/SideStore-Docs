@@ -4,21 +4,20 @@ description: A tutorial on how to enable Just-in-Time (JIT) Compilation for apps
 ---
 
 :::note
-iOS 26 has broken JIT once again. A fix will be released to StikDebug after the iPhone 17 releases.
 
-There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikDebug (formerly StikJIT), as it is the method we currently recommend. For more information, consult the [official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md). 
+There are many methods to enabling JIT, such as AltJIT, SideJITServer, and more. This tutorial will cover the use of StikDebug (formerly StikJIT), as it is the method we currently recommend. For more information, consult the [official StikDebug pairing guide](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md). Not all apps currently support enabling JIT on iOS 26.
 
-As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug. To use this, simply ensure you are connected to StosVPN with either Wi-Fi connected or Airplane Mode enabled, then navigate to "My Apps," longpress the app you wish to enable JIT for, and tap "enable JIT".
+As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built-in JIT functionality similar to StikDebug on iOS versions 17.4-18.7. To use this, simply ensure you are connected to StosVPN with either Wi-Fi connected or Airplane Mode enabled, then navigate to "My Apps," longpress the app you wish to enable JIT for, and tap "enable JIT".
 :::
 
 ## Prerequisites
-* An iDevice running iOS/iPadOS 17.4-18.6, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer). As stated above, versions newer than 18.6 are currently unsupported. 
+* An iDevice running iOS/iPadOS 17.4-18.6, excluding 18.4b1. If you are on 17.0-17.3, you must use an alternative such as [SideJITServer](https://github.com/nythepegasus/SideJITServer).
 
 ## StikDebug installation with Apple App Store
 
 1. **Install StikDebug**
    Install StikDebug from the [Apple App Store](https://apps.apple.com/us/app/stikdebug/id6744045754).
-:::note Something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps in SideStore as well, similar to StosVPN.
+:::note Here's something nice- the VPN present in StikDebug is similar to the one used in SideStore, meaning you use it to install and refresh apps in SideStore as well, similar to StosVPN.
 :::
 
 2. **Installation procedures:**
@@ -28,7 +27,7 @@ As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built
 ### Standard installation procedures:
 
 1. **Upload the Pairing File:**  
-   Open and close StikDebug to build the app's folder in files, then import the same **pairing file** you use for SideStore using idevice pair. For more information on this process, see [here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md).
+   Import the same **pairing file** you use for SideStore using idevice_pair. For more information on this process, see [here](https://github.com/StephenDev0/StikDebug-Guide/blob/main/pairing_file.md). (Alternatively, if you have already set up sidestore you can select `Import Pairing File` in StikDebug and select `ALTPairingFile.mobiledevicepairing` from the SideStore folder underneath "On My iPhone/iPad" to import your pre-generated pairing file directly)
 
 2. **Mount the DDI:**  
    Open StikDebug with Wi-Fi and the VPN connected and the pairing file imported, then close it and reopen it. This mounts the DDI and must be performed every time you restart your idevice.
@@ -39,4 +38,4 @@ As an alternative, SideStore 0.6.2 includes updates to minimuxer, allowing built
    Start by opening StikDebug on Wi-Fi or with cellular data enabled to activate the built-in VPN. Now, if using cellular data, enable Airplane Mode and reopen the app with the VPN still enabled.
    
 2. **Activate JIT:**  
-   Select the “Connect by App” button and select an app from the list (must be sideloaded with proper entitlements to appear in the list) to attach a debugger and activate JIT functionality.
+   Select the “Connect by App” button and select an app from the list (must be sideloaded by SideStore or a cert with the proper entitlements to appear in the list) to attach a debugger and activate JIT functionality.
